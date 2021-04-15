@@ -14,7 +14,15 @@ module.exports = (sequelize, DataTypes) => {
           notNull: true,
         },
       },
+      deadline: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        validate: {
+          isDate: true,
+        },
+      },
       isDone: {
+        allowNull: false,
         type: DataTypes.BOOLEAN,
         field: 'is_done',
         defaultValue: false,
