@@ -12,7 +12,7 @@ todoRouter
 
 todoRouter
   .route('/:id')
-  .all('*', findTask)
+  .all(findTask)
   .get(TaskController.getTask)
   .patch(TaskController.updateTask)
   .delete(TaskController.deleteTask);
