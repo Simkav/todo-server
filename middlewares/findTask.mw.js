@@ -2,7 +2,10 @@ const createError = require('http-errors');
 const { Todo } = require('../db/models');
 module.exports = async (req, res, next) => {
   try {
-    const { id } = body;
+    const {
+      params: { id },
+    } = req;
+    console.log(id);
     const task = await Todo.findByPk(id);
     if (!task) {
       return next(createError(400, 'Task not found'));
